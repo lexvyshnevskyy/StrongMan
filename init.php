@@ -147,7 +147,15 @@ function wpt_add_event_metaboxes() {
         'Event Location',
         'wpt_events_location',
         'champion',
-        'side',
+        'normal',
+        'default'
+    );
+    add_meta_box(
+        'wpt_events_location1',
+        'table',
+        'wpt_events_location1',
+        'champion',
+        'normal',
         'default'
     );
 }
@@ -156,13 +164,11 @@ function wpt_add_event_metaboxes() {
  * Output the HTML for the metabox.
  */
 function wpt_events_location() {
-    global $post;
-    // Nonce field to validate form request came from current site
-    wp_nonce_field( basename( __FILE__ ), 'event_fields' );
-    // Get the location data if it's already been entered
-    $location = get_post_meta( $post->ID, 'location', true );
-    // Output the field
-    echo '<input type="text" name="location" value="' . esc_textarea( $location )  . '" class="widefat">';
+   require_once ('pages/index-admin.php');
+}
+
+function wpt_events_location1() {
+    require_once ('pages/table.php');
 }
 
 /**
