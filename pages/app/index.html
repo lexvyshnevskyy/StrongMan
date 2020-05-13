@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!--<link rel="stylesheet" href="css/jquery.multiselect.css">-->
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--<script src="js/jquery.multiselect.js"></script>-->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+</head>
+<body>
+<!--<div class="form-wrapper">-->
+  <!--<h3>Name of competitions</h3>-->
+  <!--<form action="" class="judge-form">-->
+    <!--<div class="form-group full-size">-->
+      <!--<label for="competitions">Виберіть змагання</label>-->
+      <!--<select name="" id="competitions" class="order-alpha minimal">-->
+        <!--<option value="">Чемпіонат України з паверліфтінгу та класичного паверліфтінгу 2020</option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<div class="form-group size">-->
+      <!--<label for="last_name">Введіть прізвище</label>-->
+      <!--<input type="text" id="last_name">-->
+    <!--</div>-->
+    <!--<div class="form-group size">-->
+      <!--<label for="first_name">Введіть ім'я</label>-->
+      <!--<input type="text" id="first_name">-->
+    <!--</div>-->
+    <!--<div class="form-group size">-->
+      <!--<label for="father_name">Введіть побатькові</label>-->
+      <!--<input type="text" id="father_name">-->
+    <!--</div>-->
+    <!--<input type="hidden" name="country" id="countryId" value="UA"/>-->
+    <!--<div class="form-group half-size">-->
+      <!--<label for="stateId">Виберіть область</label>-->
+      <!--<select name="state" class="states order-alpha minimal" id="stateId">-->
+        <!--<option value="">Select State</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<div class="form-group half-size">-->
+      <!--<label for="cityId">Виберіть місто</label>-->
+      <!--<select name="city" class="cities order-alpha minimal" id="cityId">-->
+        <!--<option value="">Select City</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<div class="form-group size">-->
+      <!--<label for="judge_category">Виберіть суддівську категорію</label>-->
+      <!--<select name="" id="judge_category" class="minimal">-->
+        <!--<option value="">СтС</option>-->
+        <!--<option value="">БС</option>-->
+        <!--<option value="">СУ</option>-->
+        <!--<option value="">Секр</option>-->
+        <!--<option value="">ПС</option>-->
+        <!--<option value="">КС</option>-->
+        <!--<option value="">ГЖ</option>-->
+        <!--<option value="">Ж</option>-->
+      <!--</select>-->
+    <!--</div>-->
+    <!--<div class="form-group full-size date">-->
+      <!--<label for="from">Виберіть дату заїзду</label>-->
+      <!--<label for="to">та дату виїзду</label>-->
+      <!--<input type="text" id="from" name="from">-->
+      <!--<input type="text" id="to" name="to">-->
+    <!--</div>-->
+    <!--<div class="form-group full-size one-column">-->
+      <!--<label for="price">Вартість проїзду</label>-->
+      <!--<textarea name="" id="price"></textarea>-->
+    <!--</div>-->
+    <!--<div class="form-group full-size form-group-category">-->
+        <!--<div class="form-group">-->
+          <!--<label for="age_category">Вікова категорія</label>-->
+          <!--<select name="" id="age_category" class="minimal">-->
+            <!--<option value="male">Юнаки</option>-->
+            <!--<option value="male">Юнаки 1в.к</option>-->
+            <!--<option value="male">Юнаки 2в.к</option>-->
+            <!--<option value="male">Юнаки 3в.к</option>-->
+            <!--<option value="male">Юніори</option>-->
+            <!--<option value="male">Чоловіки</option>-->
+            <!--<option value="female">Дівчата</option>-->
+            <!--<option value="female">Дівчата 1в.к</option>-->
+            <!--<option value="female">Дівчата 2в.к</option>-->
+            <!--<option value="female">Дівчата 3в.к</option>-->
+            <!--<option value="female">Юніорки</option>-->
+            <!--<option value="female">Жінки</option>-->
+          <!--</select>-->
+        <!--</div>-->
+        <!--<div class="form-group" id="multi-select">-->
+          <!--<label for="weight_category">Вагова категорія</label>-->
+          <!--<select name="" id="weight_category" class="minimal">-->
+            <!--<option value="male1" class="sub-male">46</option>-->
+            <!--<option value="male2" class="sub-male">49</option>-->
+            <!--<option value="male3" class="sub-male">53</option>-->
+            <!--<option value="male4" class="sub-male">59</option>-->
+            <!--<option value="male5" class="sub-male">66</option>-->
+            <!--<option value="male6" class="sub-male">74</option>-->
+            <!--<option value="male7" class="sub-male">83</option>-->
+            <!--<option value="male8" class="sub-male">93</option>-->
+            <!--<option value="male9" class="sub-male">105</option>-->
+            <!--<option value="male10" class="sub-male">120</option>-->
+            <!--<option value="male11" class="sub-male">120+</option>-->
+            <!--<option value="female1" class="sub-female">40</option>-->
+            <!--<option value="female2" class="sub-female">43</option>-->
+            <!--<option value="female3" class="sub-female">47</option>-->
+            <!--<option value="female4" class="sub-female">52</option>-->
+            <!--<option value="female5" class="sub-female">57</option>-->
+            <!--<option value="female6" class="sub-female">63</option>-->
+            <!--<option value="female7" class="sub-female">72</option>-->
+            <!--<option value="female8" class="sub-female">84</option>-->
+            <!--<option value="female9" class="sub-female">84+</option>-->
+          <!--</select>-->
+          <!--<span id="optionstore" style="display:none;"></span>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label for="add-category">ddd</label>-->
+          <!--<div class="add-category" id="add-category">Додати</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<table>-->
+      <!--<thead>-->
+        <!--<tr>-->
+          <!--<td>Вікова категорія</td>-->
+          <!--<td>Вагова категорія</td>-->
+        <!--</tr>-->
+      <!--</thead>-->
+      <!--<tbody>-->
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</form>-->
+<!--</div>-->
+<input id="panel-1-ctrl"
+       class="panel-radios" type="radio" name="tab-radios" checked>
+<input id="panel-2-ctrl"
+       class="panel-radios" type="radio" name="tab-radios">
+<ul id="tabs-list">
+  <label id="open-nav-label"></label>
+  <li id="li-for-panel-1">
+    <label class="panel-label"
+           for="panel-1-ctrl">Radio Toggles</label>
+  </li>
+  <li id="li-for-panel-2">
+  <label class="panel-label"
+         for="panel-2-ctrl">Input :checked</label>
+  </li>
+</ul>
+<article id="panels">
+  <div class="container">
+    <section id="panel-1">
+      <main>
+        <h1>Radio Toggles</h1>
+      </main>
+    </section>
+    <section id="panel-2">
+      <main>
+         <div class="table">
+          <div class="left-side">
+            <div class="td day">День</div>
+            <div class="td flow">Потоки</div>
+            <div class="td age-category">Вікова категорія</div>
+            <div class="td weight-category">Вагова категорія</div>
+            <div class="td judje-field">
+              <input type="text" placeholder="Введіть ПІБ">
+              <select name="">
+                <option value="none">Категорія</option>
+                <option value="">І</option>
+                <option value="">ІІ</option>
+                <option value="">НК</option>
+                <option value="">МК1</option>
+                <option value="">МК2</option>
+              </select>
+            </div>
+            <div class="td judje-field">
+              <input type="text" placeholder="Введіть ПІБ">
+              <select name="">
+                <option value="none">Категорія</option>
+                <option value="">І</option>
+                <option value="">ІІ</option>
+                <option value="">НК</option>
+                <option value="">МК1</option>
+                <option value="">МК2</option>
+              </select>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="single-days">
+              <div class="td day">
+                21.04.2020
+              </div>
+              <div class="flow">
+                <span class="td">1</span>
+                <span class="td">2</span>
+                <span class="td">3</span>
+                <span class="td">4</span>
+              </div>
+              <div class="age-cetogory">
+                <div class="td">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td ">
+                    <select name="" class="multiselect" multiple="multiple">
+                      <option value="1">Юнаки</option>
+                      <option value="2">Юнаки 1в.к</option>
+                      <option value="3">Юнаки 2в.к</option>
+                      <option value="4">Юнаки 3в.к</option>
+                      <option value="5">Юніори</option>
+                      <option value="6">Чоловіки</option>
+                    </select>
+                </div>
+              </div>
+              <div class="weight-category">
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td ">
+                  <select name="" class="multiselect" multiple="multiple">
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type disabled">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type disabled">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="single-days">
+              <div class="td day">
+                22.04.2020
+              </div>
+              <div class="flow">
+                <span class="td">1</span>
+                <span class="td">2</span>
+                <span class="td">3</span>
+                <span class="td">4</span>
+              </div>
+              <div class="age-cetogory">
+                <div class="td">
+                  <select name="" id="">
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+              </div>
+              <div class="weight-category">
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type choosen">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type choosen">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="">СтС</option>
+                    <option value="">БС</option>
+                    <option value="">СУ</option>
+                    <option value="">Секр</option>
+                    <option value="">ПС</option>
+                    <option value="">КС</option>
+                    <option value="">ГЖ</option>
+                    <option value="">Ж</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="single-days">
+              <div class="td day">
+                22.04.2020
+              </div>
+              <div class="flow">
+                <span class="td">1</span>
+                <span class="td">2</span>
+                <span class="td">3</span>
+                <span class="td">4</span>
+              </div>
+              <div class="age-cetogory">
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="">
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="1">Юнаки</option>
+                    <option value="2">Юнаки 1в.к</option>
+                    <option value="3">Юнаки 2в.к</option>
+                    <option value="4">Юнаки 3в.к</option>
+                    <option value="5">Юніори</option>
+                    <option value="6">Чоловіки</option>
+                  </select>
+                </div>
+              </div>
+              <div class="weight-category">
+                <div class="td">
+                  <select name="">
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" >
+                    <option value="">46</option>
+                    <option value="">49</option>
+                    <option value="">53</option>
+                    <option value="">59</option>
+                    <option value="">66</option>
+                    <option value="">74</option>
+                    <option value="">83</option>
+                    <option value="">93</option>
+                    <option value="">105</option>
+                    <option value="">120</option>
+                    <option value="">120+</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type choosen">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name=""  class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+              </div>
+              <div class="judje-field">
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+                <div class="td">
+                  <select name="" class="judje-type">
+                    <option value="default"></option>
+                    <option value="sj">СтС</option>
+                    <option value="sdj_1">БС</option>
+                    <option value="sdj_2">БС</option>
+                    <option value="jp">СУ</option>
+                    <option value="sc">Секр</option>
+                    <option value="asc">ПС</option>
+                    <option value="csc">КС</option>
+                    <option value="hj">ГЖ</option>
+                    <option value="j_1">Ж</option>
+                    <option value="j_2">Ж</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div>
+</article>
+<script>
+    $( function() {
+        var dateFormat = "mm/dd/yy",
+            from = $( "#from" )
+                .datepicker({
+                    defaultDate: "+1w",
+                    changeMonth: true,
+                    numberOfMonths: 1,
+                    dateFormat: "DD, d MM, yy"
+                })
+                .on( "change", function() {
+                    to.datepicker( "option", "minDate", getDate( this ) );
+                }),
+            to = $( "#to" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                dateFormat: "DD, d MM, yy"
+            })
+                .on( "change", function() {
+                    from.datepicker( "option", "maxDate", getDate( this ) );
+                });
+
+        function getDate( element ) {
+            var date;
+            try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+            } catch( error ) {
+                date = null;
+            }
+
+            return date;
+        }
+
+        $(".multiselect").select2();
+
+        $('.judje-type').on('change', function(){
+          console.log('I am change judje-type');
+            $(this).addClass('choosen');
+            var grandparent = $(this).parent('.td');
+            grandparent.next().find('select').addClass('disabled');
+            grandparent.prev().find('select').addClass('not-active');
+            if ($(this).val() == "default" || $(this).hasClass('not-active')) {
+              console.log('I am change judje-type 222');
+                $(this).removeClass('choosen');
+                grandparent.next().find('select').removeClass('disabled');
+                grandparent.prev().find('select').removeClass('not-active');
+            }
+        });
+
+        $('#age_category').on("change", function() {
+            var cattype = $(this).val();
+            optionswitch(cattype);
+        });
+
+        // Add values with age and weight in the table
+        addCategory();
+        makeActive();
+    } );
+    function makeActive(){
+        $('.choosen').each(function () {
+          console.log('I am change choosen');
+            var grandparent = $(this).parent('.td');
+            grandparent.next().find('select').addClass('disabled');
+            grandparent.prev().find('select').addClass('not-active');
+        })
+    }
+
+    function optionswitch(myfilter) {
+        //Populate the optionstore if the first time through
+        if ($('#optionstore').text() == "") {
+            $('option[class^="sub-"]').each(function() {
+                var optvalue = $(this).val();
+                var optclass = $(this).prop('class');
+                var opttext = $(this).text();
+                optionlist = $('#optionstore').text() + "@%" + optvalue + "@%" + optclass + "@%" + opttext;
+                $('#optionstore').text(optionlist);
+            });
+        }
+        //delete everything
+        $('option[class^="sub-"]').remove();
+        // put the filtered stuff back
+        populateoption = rewriteoption(myfilter);
+        $('#weight_category').html(populateoption);
+    }
+
+    function rewriteoption(myfilter) {
+        //rewrite only the filtered stuff back into the option
+        var options = $('#optionstore').text().split('@%');
+        var resultgood = false;
+        var myfilterclass = "sub-" + myfilter;
+        var optionlisting = "";
+
+        myfilterclass = (myfilter != "")?myfilterclass:"all";
+        //first variable is always the value, second is always the class, third is always the text
+        for (var i = 3; i < options.length; i = i + 3) {
+            if (options[i - 1] == myfilterclass || myfilterclass == "all") {
+                optionlisting = optionlisting + '<option value="' + options[i - 2] + '" class="sub-' + options[i - 1] + '">' + options[i] + '</option>';
+                resultgood = true;
+            }
+        }
+        if (resultgood) {
+            return optionlisting;
+        }
+    }
+    function addCategory(){
+        $('.add-category').on('click', function(){
+            var age = $('#age_category option:checked').text();
+            var weight = $('#weight_category option:checked').text();
+            var markup = "<tr><td>" + age + "</td><td>" + weight + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+    }
+</script>
+
+<script src="//geodata.solutions/includes/statecity.js"></script>
+</body>
+</html>

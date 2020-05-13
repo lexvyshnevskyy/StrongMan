@@ -1,0 +1,146 @@
+.table {
+  display: flex;
+  .td {
+    height: 30px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &:last-child {
+      border-bottom: none;
+    }
+    ul.judje-type {
+      list-style: none;
+      z-index: 1;
+      position: absolute;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      text-align: center;
+      height: 30px;
+      overflow: hidden;
+      transition: all 3s;
+      background: #fff;
+      &.active {
+        visibility: visible;
+        height: auto;
+        top: 0;
+        z-index: 10;
+      }
+      li {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid;
+        &:hover {
+          background: red;
+        }
+      }
+    }
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    font-size: 10px;
+  }
+  .left-side {
+    display: grid;
+    grid-template-columns: 400px;
+    width: 400px;
+    border: 1px solid;
+    margin-bottom: 30px;
+    .judje-field {
+      position: relative;
+      justify-content: space-between;
+      input {
+        width: 70%;
+        border: none;
+        height: 28px;
+        background: grey;
+        padding-left: 10px;
+        &:focus,
+        &:focus-within {
+          outline: none;
+          outline-offset: unset;
+        }
+      }
+
+    }
+  }
+  .right-side {
+    border-top: 1px solid;
+    display: flex;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    .single-days {
+      border-right: 1px solid;
+      .judje-field {
+        ul,
+        select,
+        span {
+          &.choosen {
+            background: blue;
+          }
+          &.not-active {
+            background: orange;
+          }
+          &.disabled {
+            background: red;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+    .flow {
+      display: flex;
+      span {
+        display: flex;
+        width: 100px;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        align-items: center;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    .judje-field,
+    .age-cetogory,
+    .weight-category {
+      display: flex;
+      > div {
+        width: 100px;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        &:last-child {
+          border-right: none;
+        }
+        ul {
+          width: 100%;
+        }
+        select {
+          padding: 0 0 0 20px;
+          width: 100%;
+          border: none;
+          height: -webkit-fill-available;
+          &.judje-type {
+            color: #fff;
+          }
+          option {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.to-update {
+  opacity: 0;
+}
+.select2-container--default .select2-selection--single {
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+}

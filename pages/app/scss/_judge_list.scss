@@ -1,0 +1,36 @@
+#judge_list {
+  table thead th {
+    text-align: center;
+  }
+}
+.export_to_excel {
+  display: flex;
+  background: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background: none;
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    margin: auto;
+  }
+}
+#main_table {
+  .td.judje-field {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    grid-gap: 10px;
+    span.category {
+      display: block;
+      border-left: 1px solid;
+      width: 50px;
+      text-align: center;
+    }
+  }
+}

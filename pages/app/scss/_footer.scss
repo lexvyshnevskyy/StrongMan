@@ -1,0 +1,14 @@
+footer {
+  height: 10vh;
+  background: grey;
+  padding: 10px 90px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    a {
+      font-size: 14px;
+    }
+  }
+}

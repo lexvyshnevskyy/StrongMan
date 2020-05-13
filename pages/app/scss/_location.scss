@@ -1,0 +1,21 @@
+.__select_date__ {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px 20px;
+  padding: 10px;
+  label {
+    display: block;
+  }
+}
+.__days_block__{
+  display: flex;
+  .__dt_period {
+    width: 100%;
+    padding: 10px;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+}

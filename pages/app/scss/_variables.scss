@@ -1,0 +1,26 @@
+$baseTextColor: #000;
+$tab-count: 2;
+$menu-item-height: 46px;
+
+$color-primary-light: #e74c3c;
+$color-primary-dark: #c0392b;
+$color-text: #444444;
+
+$color-border: #dfdfdf;
+$color-border-top: $color-primary-dark;
+
+$color-label-bg-inactive: #ecf0f1;
+$color-label-bg-active: white;
+$color-label-active: $color-border-top;
+$color-label-inactive: #bdc3c7;
+
+$btn-border-top-thickness: 6px;
+
+$tab-padding: 24px;
+$tab-transition-duration: 200ms;
+$tab-base-border-style: 1px solid $color-border;
+$tab-trans-border-style: 1px solid transparent;
+
+$panel-transition-duration: 600ms;
+$main-padding: 48px 24px;
+$menu-padding: 12px 24px;

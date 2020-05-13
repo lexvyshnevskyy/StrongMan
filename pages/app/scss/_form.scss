@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,700i&display=swap&subset=cyrillic');
+select {
+  background-color: white;
+  border-radius: 0;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.wp-admin select.minimal {
+  line-height: 1.8;
+  height: 35px;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0 10px;
+}
+.wp-admin select.minimal,
+select.minimal {
+  background-image:
+          linear-gradient(45deg, transparent 50%, gray 50%),
+          linear-gradient(135deg, gray 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+  background-position:
+          calc(100% - 20px) calc(1em + 2px),
+          calc(100% - 15px) calc(1em + 2px),
+          calc(100% - 2.5em) 0.5em;
+  background-size:
+          5px 5px,
+          5px 5px,
+          1px 1.5em;
+  background-repeat: no-repeat;
+}
+.wp-admin select.minimal:focus,
+select.minimal:focus {
+  background-image:
+          linear-gradient(45deg, green 50%, transparent 50%),
+          linear-gradient(135deg, transparent 50%, green 50%),
+          linear-gradient(to right, #ccc, #ccc);
+  background-position:
+          calc(100% - 15px) 1em,
+          calc(100% - 20px) 1em,
+          calc(100% - 2.5em) 0.5em;
+  background-size:
+          5px 5px,
+          5px 5px,
+          1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0;
+}
+
+.wp-admin select:-moz-focusring,
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+.form-wrapper {
+  max-width: 700px;
+  padding: 10px 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+  h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
+.judge-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  table {
+    width: 100%;
+    border: 1px solid;
+    border-spacing: inherit;
+    td {
+      border: 1px solid;
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}
+.form-group {
+  display: grid;
+  grid-gap: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  &.one-column {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  &.half-size {
+    width: 49%;
+  }
+  &.full-size {
+    width: 100%;
+    &.form-group-category {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &.size{
+    width: 33%;
+  }
+  &.date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  label {
+    text-align: center;
+    font-size: 14px;
+  }
+  input {
+    height: 37px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  textarea {
+    resize: none;
+    height: 30px;
+  }
+  label[for="add-category"] {
+    visibility: hidden;
+  }
+  .add-category {
+    border: 1px solid;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    &:hover {
+      cursor: pointer;
+      background: grey;
+    }
+  }
+  .multiselect-wrap {
+    width: auto;
+    min-height: 30px;
+    border: 1px solid rgb(166, 166, 166);
+  }
+  .multiselect-selected {
+    min-height: 30px;
+  }
+}
+.ui-datepicker-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1em;
+
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 50%;
+  padding: 5px 10px;
+}
+
+table {
+  border-collapse: collapse;
+  tr {
+    &:nth-child(even){background-color: #f2f2f2;}
+    &:hover {background-color: #ddd;}
+  }
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+}
+select option[disabled] {
+  display: none;
+}
+
+p.title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+}
+p.dropdown-description {
+  grid-column: 1/-1;
+  font-size: 1.8em;
+  font-weight: 500;
+}
